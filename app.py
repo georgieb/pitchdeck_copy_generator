@@ -30,11 +30,8 @@ def index():
 
 
 def generate_prompt(business_name,fy21_ebitda, fy22_ebitda, industry, employees, transaction_goals,other_details):
-    return """Write a pitch deck for a M&A transaction with the following information. 
-    Discuss the upward trajectory of the company and a good market fit.
-    Write it similar to the style below:
+    return """Write copy a pitch deck for a M&A transaction with the following information. 
     
-    style: Business name is a rapidly-growing Cognac brand with a strong market presence and a proprietary blend of high-quality products. The brand's success is evident in its impressive sales growth, with 9L case volume increasing from 8.1k in FY20 to 10.8k in FY21, and projected to reach 10.0k in FY22P. This upward trajectory is a clear indication of the brand's ability to generate profits and create value for all stakeholders.In addition, CRU has a solid market fit within the Cognac industry, with a presence in 21 states and recent expansion into five new markets. The brand's super-premium products have proven popular with consumers, resulting in high sales and customer loyalty. Overall, the business is a strong and attractive acquisition target, with a clear upward trajectory, a solid market fit, and high-quality products. The brand's success and recognition within the industry make it an ideal partner for any potential acquirer looking to enter or expand within the Cognac market.
     business name: {}
     ebitda FY21: {}
     ebitda FY22: {}
