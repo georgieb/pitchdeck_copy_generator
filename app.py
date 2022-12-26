@@ -30,8 +30,8 @@ def index():
 
 
 def generate_prompt(business_name,fy21_ebitda, fy22_ebitda, industry, employees, transaction_goals,other_details):
-    return """Write copy a pitch deck for a M&A transaction with the following information. 
-    
+    return """Write two paragraphs of copy for a pitch deck for a M&A transaction with the following information: 
+    Discuss the industry trends.
     business name: {}
     ebitda FY21: {}
     ebitda FY22: {}
