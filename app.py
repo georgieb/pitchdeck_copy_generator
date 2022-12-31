@@ -7,8 +7,21 @@ app = Flask(__name__)
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 
-@app.route("/", methods=("GET", "POST"))
+@app.route('/')
 def index():
+    return render_template("index.html")
+
+
+@app.route('/page_one')
+def page_one():
+    return render_template("page1.html")
+
+@app.route('/page_two')
+def page_two():
+    return render_template("page2.html")
+
+@app.route("/teaser", methods=("GET", "POST"))
+def teaser():
     if request.method == "POST":
         business_name = request.form["businessname"]
         fy21_ebitda = request.form["ebitda21"]
@@ -23,10 +36,10 @@ def index():
             max_tokens=3000,   
             temperature=0.6,
         )
-        return redirect(url_for("index", result=response.choices[0].text))
+        return redirect(url_for("teaser", result=response.choices[0].text))
 
     result = request.args.get("result")
-    return render_template("index.html", result=result)
+    return render_template("teaser.html", result=result)
 
 
 def generate_prompt(business_name,fy21_ebitda, fy22_ebitda, industry, employees, transaction_goals,other_details):
