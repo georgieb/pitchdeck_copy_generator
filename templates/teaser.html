@@ -11,7 +11,7 @@
 <body>
   <img src="{{ url_for('static', filename='finance.jpeg') }}" class="icon" />
   <h3>Fill out your company details below to get started:</h3>
-  <form action="/" method="post">
+  <form action="/teaser" method="post">
     <input type="text" name="businessname" placeholder="What is the business or project name?" required />
     <input type="text" name="ebitda21" placeholder="Enter your FY21 EBITDA" required />
     <input type="text" name="ebitda22" placeholder="Enter your FY22 EBITDA" required />
