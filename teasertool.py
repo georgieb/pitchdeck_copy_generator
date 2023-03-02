@@ -6,7 +6,7 @@ from flask import Flask, redirect, render_template, request, url_for
 app = Flask(__name__)
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
-model_engine = "davinci"
+model_engine = "davinci-003"
 
 def generate_text(prompt):
    completions = openai.Completion.create(
